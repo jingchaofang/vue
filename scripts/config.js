@@ -90,6 +90,7 @@ const builds = {
     format: 'es',
     transpile: false,
     env: 'development',
+    sourcemap: true,
     alias: { he: './entity-decoder' },
     banner
   },
@@ -125,6 +126,7 @@ const builds = {
     dest: resolve('dist/vue.js'),
     format: 'umd',
     env: 'development',
+    sourcemap: true,
     alias: { he: './entity-decoder' },
     banner
   },
@@ -225,6 +227,7 @@ function genConfig (name) {
     output: {
       file: opts.dest,
       format: opts.format,
+      sourcemap: opts.sourcemap || false,
       banner: opts.banner,
       name: opts.moduleName || 'Vue'
     },
